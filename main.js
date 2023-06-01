@@ -1,9 +1,11 @@
-var random_num, c, high_score;
+var random_num, c=100, high_score, n=0;
 function startGame(){
     c=100;
     document.getElementById("chances").textContent = c;
     random_num = Math.floor((Math.random() * 100) + 1);
-    document.getElementsByTagName("body")[0].style.backgroundColor = "#222222";
+    if(n>0)
+        document.getElementsByTagName("body")[0].style.backgroundColor = "#222222";
+    n++;
 }
 
 function checkAns(){
@@ -27,3 +29,4 @@ function checkAns(){
     c--;
     document.getElementById("chances").textContent = c;
 }
+startGame();
